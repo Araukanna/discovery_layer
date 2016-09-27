@@ -20,7 +20,7 @@ require 'uri'
     # Create the HTML to display a field
     # from a solr document
     def display_field(document, field_name, label, opts = {})
-        
+
         # Make sure that the document actually has the
         # desired field
         if document.respond_to? field_name
@@ -47,7 +47,7 @@ require 'uri'
               value_string = search_catalog_link(strip(value), search_field, exact_match)
 
            elsif opts[:contains_url]
-              value_string = external_link(value) 
+              value_string = external_link(value)
 
            else
               value_string = value

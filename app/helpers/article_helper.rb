@@ -1,10 +1,12 @@
 module ArticleHelper
+    include BlacklightHelper
+    include LbccHelper
     require 'open-uri'
     require 'uri'
 
     EBSCO_LINK_RESOLVER_PREFIX = 'http://resolver.ebscohost.com.ezproxy.libweb.linnbenton.edu:2048/openurl/?linksourcecustid=15183&id=doi:'
     PROXY_PREFIX = 'http://ezproxy.libweb.linnbenton.edu:2048/login?url='
-     
+
     def display_article_type(original_string)
         article_type = original_string.capitalize
         unless article_type.include? 'article'

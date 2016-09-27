@@ -1,3 +1,7 @@
+<% require 'pp' %>
+<pre>
+<%= JSON.pretty_generate(document.to_hash) %>
+</pre>
 <%= display_access_options(document, 'show') %>
 <% begin %>
 <% ahoy.track 'viewed record', catalog_id: document.id %>
@@ -41,4 +45,3 @@
   <%= display_field(document, 'publication_note_display', 'Publication details', :dc_element=>'description') %>
   <%= display_field(document, 'record_source_facet', 'Collection') %>
 </dl>
-
